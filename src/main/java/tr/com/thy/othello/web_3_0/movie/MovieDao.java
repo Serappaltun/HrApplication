@@ -7,9 +7,10 @@ import tr.com.thy.othello.web_3_0.common.AbstractDao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.Collection;
 
 
 @Slf4j
@@ -24,27 +25,24 @@ public class MovieDao extends AbstractDao
 	}
 	
 	//@formatter:off
-	@Query( "SELECT mov "
+	@Query( "SELECT NEW tr.com.thy.othello.web_3_0.movie.MovieDto( title, year) "
 			+ " FROM Movie mov"
-			+ " WHERE  users.oracleUsername = :username"
-			+ " AND cp.partnerId = users.customerPartnerId" )
+			+ " WHERE mov.type = :movieType" )
 	//@formatter:on
-	public Integer findAgentIntIdByUsername( String username )
+	public Collection< MovieDto > findMovieByMovieType( String movieType )
 	{
-		
 		//@formatter:off
-		final TypedQuery< Integer > query = getQuery( "findAgentIntIdByUsername", Integer.class )
-				.setParameter( "username", username )
-				.setMaxResults( 1 );
+		final TypedQuery< MovieDto > query = getQuery( "findMovieByMovieType", MovieDto.class )
+				.setParameter( "movieType", movieType );
 		//@formatter:on
 		
 		try
 		{
-			return query.getSingleResult();
+			return query.getResultList();
 		}
-		catch ( NoResultException e )
+		catch ( Exception e )
 		{
-			return null;
+			return new ArrayList<>();
 		}
 	}
 }

@@ -34,6 +34,9 @@ public class MovieService
 	@Autowired
 	private MovieRepository movieRepository;
 	
+	@Autowired
+	private MovieDao movieDao;
+	
 	
 	public Iterable< Movie > findAll()
 	{
@@ -94,6 +97,16 @@ public class MovieService
 	public void deleteMovie( String imdbID )
 	{
 		movieRepository.deleteMovieByImdbId( imdbID );
+		
+	}
+	
+	@Cacheable
+	public Collection<MovieDto>  findMovieByMovieType( String type )
+	{
+		final Collection<MovieDto> movieDto = movieDao.findMovieByMovieType( type );
+		log.info( "get from db. type:" + type + "| count:" + movieDto.size() );
+		
+		return movieDto;
 		
 	}
 }

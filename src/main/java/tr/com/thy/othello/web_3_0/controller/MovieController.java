@@ -2,6 +2,7 @@ package tr.com.thy.othello.web_3_0.controller;
 
 
 import tr.com.thy.othello.web_3_0.entity.Movie;
+import tr.com.thy.othello.web_3_0.movie.MovieDto;
 import tr.com.thy.othello.web_3_0.movie.MovieService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,17 @@ public class MovieController
 	{
 		
 		final Collection< Movie > moviesByTitle = movieService.findByMovieTitle( title );
+		
+		return ResponseEntity.ok( moviesByTitle );
+		
+	}
+	
+	
+	@GetMapping( "/findByType/{type}" )
+	ResponseEntity< Collection< MovieDto > > findMovieByMovieType( @Validated @PathVariable( "type" ) String type )
+	{
+		
+		final Collection< MovieDto > moviesByTitle = movieService.findMovieByMovieType( type );
 		
 		return ResponseEntity.ok( moviesByTitle );
 		
