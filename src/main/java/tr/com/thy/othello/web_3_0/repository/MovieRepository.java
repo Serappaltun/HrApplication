@@ -1,6 +1,6 @@
-package com.example.microSite.repository;
+package tr.com.thy.othello.web_3_0.repository;
 
-import com.example.microSite.entity.Movie;
+import tr.com.thy.othello.web_3_0.entity.Movie;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

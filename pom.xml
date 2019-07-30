@@ -8,11 +8,11 @@
         <version>2.1.6.RELEASE</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>othello-web3.0</artifactId>
+    <groupId>tr.com.thy</groupId>
+    <artifactId>othello.web_3_0</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>othello-web3.0</name>
-    <description>Demo project for Spring Boot</description>
+    <name>othello.web_3_0</name>
+    <description>Othello Web 3.0. for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>

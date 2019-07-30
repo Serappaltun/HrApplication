@@ -1,8 +1,8 @@
-package com.example.microSite.controller;
+package tr.com.thy.othello.web_3_0.controller;
 
 
-import com.example.microSite.entity.Movie;
-import com.example.microSite.movie.MovieService;
+import tr.com.thy.othello.web_3_0.entity.Movie;
+import tr.com.thy.othello.web_3_0.movie.MovieService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

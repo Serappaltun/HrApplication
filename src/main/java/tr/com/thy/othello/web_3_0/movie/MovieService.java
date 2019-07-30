@@ -1,9 +1,8 @@
-package com.example.microSite.movie;
+package tr.com.thy.othello.web_3_0.movie;
 
-import com.example.microSite.entity.Movie;
-import com.example.microSite.repository.MovieRepository;
+import tr.com.thy.othello.web_3_0.entity.Movie;
+import tr.com.thy.othello.web_3_0.repository.MovieRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,9 +1,7 @@
-package com.example.microSite;
+package tr.com.thy.othello.web_3_0;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.hazelcast.HazelcastAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 
 @EnableCaching

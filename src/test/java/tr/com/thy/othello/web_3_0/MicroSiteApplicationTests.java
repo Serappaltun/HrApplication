@@ -1,4 +1,4 @@
-package com.example.microSite;
+package tr.com.thy.othello.web_3_0;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

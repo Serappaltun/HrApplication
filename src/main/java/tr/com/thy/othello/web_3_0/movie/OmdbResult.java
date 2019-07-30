@@ -1,6 +1,6 @@
-package com.example.microSite.movie;
+package tr.com.thy.othello.web_3_0.movie;
 
-import com.example.microSite.entity.Movie;
+import tr.com.thy.othello.web_3_0.entity.Movie;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;

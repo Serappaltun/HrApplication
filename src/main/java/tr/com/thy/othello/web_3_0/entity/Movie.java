@@ -1,4 +1,4 @@
-package com.example.microSite.entity;
+package tr.com.thy.othello.web_3_0.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

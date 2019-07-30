@@ -1,4 +1,4 @@
-package com.example.microSite.configuration;
+package tr.com.thy.othello.web_3_0.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
