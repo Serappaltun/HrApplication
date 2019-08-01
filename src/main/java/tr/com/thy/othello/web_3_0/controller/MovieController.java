@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import tr.com.thy.othello.web_3_0.request.MovieSaveRequest;
 
 import java.util.Collection;
 
@@ -59,5 +60,12 @@ public class MovieController
 	{
 		movieService.deleteMovie( imdbID );
 		
+	}
+	
+	@PostMapping
+	ResponseEntity< Movie > saveMovie( @Validated @RequestBody MovieSaveRequest saveRequest )
+	{
+		final Movie saveMovie = movieService.saveMovie( saveRequest );
+		return ResponseEntity.ok( saveMovie );
 	}
 }

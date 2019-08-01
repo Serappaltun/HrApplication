@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.client.RestTemplate;
+import tr.com.thy.othello.web_3_0.request.MovieSaveRequest;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -101,13 +102,27 @@ public class MovieService
 	}
 	
 	@Cacheable
-	public Collection<MovieDto>  findMovieByMovieType( String type )
+	public Collection< MovieDto > findMovieByMovieType( String type )
 	{
-		final Collection<MovieDto> movieDto = movieDao.findMovieByMovieType( type );
+		final Collection< MovieDto > movieDto = movieDao.findMovieByMovieType( type );
 		log.info( "get from db. type:" + type + "| count:" + movieDto.size() );
 		
 		return movieDto;
 		
 	}
+	
+	public Movie saveMovie( MovieSaveRequest request )
+	{
+		Movie movie = new Movie();
+		movie.setImdbId( request.getImdbID() );
+		movie.setTitle( request.getTitle() );
+		movie.setYear( request.getYear() );
+		movie.setType( request.getType() );
+		movie.setPoster( request.getPoster() );
+		
+		return movieRepository.save( movie );
+	}
+	
+	
 }
 
